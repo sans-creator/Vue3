@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vue 3 Demo</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ getHeading() }}</h1>
+    <h1>get any random lucky number {{ getRandomNumber() }}</h1>
+    <p>Lucky number is an {{getRandomNumber()%2==0?'even':'odd'}}</p>
+    <p>Aray numbers:{{arr}}</p>
+    <p>{{emp.name}}</p>
+    <p>{{emp.age}}</p>
+    <p>{{emp.gender}}</p>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      setup() {  //compostion api
+        const msg = "hello vue";
+        const lucknumber=7
+        const arr=[1,2,3,4,5]
+        const emp={
+            name:'sanskar',
+            age:20,
+            gender:'male'
+
+            
+        }
+
+        function getRandomNumber(){
+            return Math.floor(Math.random()*10)+1
+        }
+        function getHeading(){
+            return "heading"
+        }
+        return {
+          msg,
+          lucknumber,
+          arr,
+          emp,
+          getRandomNumber,
+          getHeading
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
