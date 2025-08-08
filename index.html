@@ -8,47 +8,21 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ getHeading() }}</h1>
-    <h1>get any random lucky number {{ getRandomNumber() }}</h1>
-    <p>Lucky number is an {{getRandomNumber()%2==0?'even':'odd'}}</p>
-    <p>Aray numbers:{{arr}}</p>
-    <p>{{emp.name}}</p>
-    <p>{{emp.age}}</p>
-    <p>{{emp.gender}}</p>
-  </div>
+    <button>
+          Hello world
 
+
+    </button>
+  </div>
+    
   <script>
-    const { createApp } = Vue;
+    const { createApp,ref,reactive } = Vue;
 
     createApp({
-      setup() {  //compostion api
-        const msg = "hello vue";
-        const lucknumber=7
-        const arr=[1,2,3,4,5]
-        const emp={
-            name:'sanskar',
-            age:20,
-            gender:'male'
-
-            
-        }
-
-        function getRandomNumber(){
-            return Math.floor(Math.random()*10)+1
-        }
-        function getHeading(){
-            return "heading"
-        }
-        return {
-          msg,
-          lucknumber,
-          arr,
-          emp,
-          getRandomNumber,
-          getHeading
-        };
+      setup() {  // composition API
+        return {};
       }
-    }).mount('#app');
+    }).mount("#app");
   </script>
 </body>
 </html>
