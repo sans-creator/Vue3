@@ -6,15 +6,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
-export default {
-    setup(){
-        const email=ref("hello.netmastery")
 
-        return {email}
+        const email=ref("hello.")
 
-    }
-}
+
 </script>
